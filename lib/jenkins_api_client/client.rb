@@ -361,8 +361,8 @@ module JenkinsApi
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       elsif @ssl
         http.use_ssl = true
-
-        http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+        # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         http.ca_file = @ca_file if @ca_file
       end
       http.open_timeout = @http_open_timeout
